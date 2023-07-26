@@ -14,8 +14,8 @@ export class AdminService {
   addTeam(team : Team){
     this.http.post(AdminService.baseUrl+"/teams",team).subscribe(d=>d=team);
   }
-  addPlayer(player:Team){
-    this.http.post(AdminService.baseUrl+"/teams/",player.players).subscribe(d=>d=player);
+  addPlayer(team:Team){
+    this.http.post(AdminService.baseUrl+"/teams/"+team.id,team).subscribe(d=>d=team);
   }
 
   listTeam(){
